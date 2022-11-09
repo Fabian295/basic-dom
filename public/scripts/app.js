@@ -31,6 +31,17 @@ var Hello = /*#__PURE__*/function (_React$Component) {
   }]);
   return Hello;
 }(React.Component);
+var Card = function Card() {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
+    className: "card__title"
+  }, "The Card Title"), /*#__PURE__*/React.createElement("p", {
+    className: "card__content"
+  }, "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, dolores!"), /*#__PURE__*/React.createElement("p", {
+    className: "card__price"
+  }, "\u20AC 500"), /*#__PURE__*/React.createElement("footer", {
+    className: "card__footer"
+  }, "FK inc \xA9 2022"));
+};
 var DOMContainer = document.getElementById('app');
 var root = ReactDOM.createRoot(DOMContainer);
-root.render( /*#__PURE__*/React.createElement(Hello, null));
+root.render( /*#__PURE__*/React.createElement(Card, null));

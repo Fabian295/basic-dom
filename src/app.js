@@ -14,6 +14,17 @@ class Hello extends React.Component {
   }
 }
 
+const Card = () => {
+  return (
+    <div>
+      <h2 className="card__title">The Card Title</h2>
+      <p className="card__content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, dolores!</p>
+      <p className="card__price">€ 500</p>
+      <footer className="card__footer">FK inc &copy; 2022</footer>
+    </div>
+  )
+}
+
 const DOMContainer = document.getElementById('app')
 const root = ReactDOM.createRoot(DOMContainer)
-root.render(<Hello />)
+root.render(<Card />)
