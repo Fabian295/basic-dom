@@ -12,75 +12,40 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 console.log('app-js running!');
-// const template = <p>This is JSX compiled to public folder app.js with config file from Babel</p> 
-// const template = React.createElement('p', null, 'This is JSX from app.js via CDN')
-
-// class Hello extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1 className="hello">
-//           Hello World!
-//         </h1>
-//       </div>
-//     )
-//   }
-// }
-
-// const Card = () => {
-//   return (
-//     <div>
-//       <h2 className="card__title">The Card Title</h2>
-//       <p className="card__content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, fdolores!</p>
-//       <p className="card__price">€ 500</p>
-//       <footer className="card__footer">FK inc &copy; 2022</footer>
-//     </div>
-//   )
-// }
-
-// class MovieList extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <h2>Movie List Collection</h2>
-//         <h3>
-//           {this.props.subTitle}
-//         </h3>
-//         <ul>
-//           <Movie listItem="Bourne premacy" />
-//           <Movie listItem="Aquaman" />
-//           <Movie listItem="Lord of the Rings" />
-//         </ul>
-//       </div>
-//     )
-//   }
-// }
-
-// const Movie = (props) => {
-//   // listItem =  "Star Wars"
-//   return (
-
-//       <li>
-//         {props.listItem}
-//       </li>
-
-//   )
-// }
 var Checkbox = /*#__PURE__*/function (_React$Component) {
   _inherits(Checkbox, _React$Component);
   var _super = _createSuper(Checkbox);
-  function Checkbox() {
+  function Checkbox(props) {
+    var _this;
     _classCallCheck(this, Checkbox);
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      checked: true
+    };
+    _this.handleCheck = _this.handleCheck.bind(_assertThisInitialized(_this));
+    return _this;
   }
   _createClass(Checkbox, [{
+    key: "handleCheck",
+    value: function handleCheck() {
+      this.setState({
+        checked: !this.state.checked
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var msg;
+      if (this.state.checked) {
+        msg = 'CHECKED';
+      } else {
+        msg = "NOT CHECKED";
+      }
       return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
-        name: "",
-        id: ""
-      }));
+        onChange: this.handleCheck,
+        defaultChecked: this.state.checked
+      }), /*#__PURE__*/React.createElement("p", null, "The box is ", msg));
     }
   }]);
   return Checkbox;
