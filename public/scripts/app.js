@@ -36,12 +36,39 @@ var Card = function Card() {
     className: "card__title"
   }, "The Card Title"), /*#__PURE__*/React.createElement("p", {
     className: "card__content"
-  }, "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, dolores!"), /*#__PURE__*/React.createElement("p", {
+  }, "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, fdolores!"), /*#__PURE__*/React.createElement("p", {
     className: "card__price"
   }, "\u20AC 500"), /*#__PURE__*/React.createElement("footer", {
     className: "card__footer"
   }, "FK inc \xA9 2022"));
 };
+var MovieList = /*#__PURE__*/function (_React$Component2) {
+  _inherits(MovieList, _React$Component2);
+  var _super2 = _createSuper(MovieList);
+  function MovieList() {
+    _classCallCheck(this, MovieList);
+    return _super2.apply(this, arguments);
+  }
+  _createClass(MovieList, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Movie List Collection"), /*#__PURE__*/React.createElement("h3", null, this.props.subTitle), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement(Movie, {
+        listItem: "Bourne premacy"
+      }), /*#__PURE__*/React.createElement(Movie, {
+        listItem: "Aquaman"
+      }), /*#__PURE__*/React.createElement(Movie, {
+        listItem: "Lord of the Rings"
+      })));
+    }
+  }]);
+  return MovieList;
+}(React.Component);
+var Movie = function Movie(props) {
+  // listItem =  "Star Wars"
+  return /*#__PURE__*/React.createElement("li", null, props.listItem);
+};
 var DOMContainer = document.getElementById('app');
 var root = ReactDOM.createRoot(DOMContainer);
-root.render( /*#__PURE__*/React.createElement(Card, null));
+root.render( /*#__PURE__*/React.createElement(MovieList, {
+  subTitle: 'the best top films'
+}));
