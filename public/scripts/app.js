@@ -11,64 +11,80 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-console.log('app-js for react!');
+console.log('app-js running!');
 // const template = <p>This is JSX compiled to public folder app.js with config file from Babel</p> 
 // const template = React.createElement('p', null, 'This is JSX from app.js via CDN')
-var Hello = /*#__PURE__*/function (_React$Component) {
-  _inherits(Hello, _React$Component);
-  var _super = _createSuper(Hello);
-  function Hello() {
-    _classCallCheck(this, Hello);
+
+// class Hello extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1 className="hello">
+//           Hello World!
+//         </h1>
+//       </div>
+//     )
+//   }
+// }
+
+// const Card = () => {
+//   return (
+//     <div>
+//       <h2 className="card__title">The Card Title</h2>
+//       <p className="card__content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, fdolores!</p>
+//       <p className="card__price">€ 500</p>
+//       <footer className="card__footer">FK inc &copy; 2022</footer>
+//     </div>
+//   )
+// }
+
+// class MovieList extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <h2>Movie List Collection</h2>
+//         <h3>
+//           {this.props.subTitle}
+//         </h3>
+//         <ul>
+//           <Movie listItem="Bourne premacy" />
+//           <Movie listItem="Aquaman" />
+//           <Movie listItem="Lord of the Rings" />
+//         </ul>
+//       </div>
+//     )
+//   }
+// }
+
+// const Movie = (props) => {
+//   // listItem =  "Star Wars"
+//   return (
+
+//       <li>
+//         {props.listItem}
+//       </li>
+
+//   )
+// }
+var Checkbox = /*#__PURE__*/function (_React$Component) {
+  _inherits(Checkbox, _React$Component);
+  var _super = _createSuper(Checkbox);
+  function Checkbox() {
+    _classCallCheck(this, Checkbox);
     return _super.apply(this, arguments);
   }
-  _createClass(Hello, [{
+  _createClass(Checkbox, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
-        className: "hello"
-      }, "Hello World!"));
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+        type: "checkbox",
+        name: "",
+        id: ""
+      }));
     }
   }]);
-  return Hello;
+  return Checkbox;
 }(React.Component);
-var Card = function Card() {
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
-    className: "card__title"
-  }, "The Card Title"), /*#__PURE__*/React.createElement("p", {
-    className: "card__content"
-  }, "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, fdolores!"), /*#__PURE__*/React.createElement("p", {
-    className: "card__price"
-  }, "\u20AC 500"), /*#__PURE__*/React.createElement("footer", {
-    className: "card__footer"
-  }, "FK inc \xA9 2022"));
-};
-var MovieList = /*#__PURE__*/function (_React$Component2) {
-  _inherits(MovieList, _React$Component2);
-  var _super2 = _createSuper(MovieList);
-  function MovieList() {
-    _classCallCheck(this, MovieList);
-    return _super2.apply(this, arguments);
-  }
-  _createClass(MovieList, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Movie List Collection"), /*#__PURE__*/React.createElement("h3", null, this.props.subTitle), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement(Movie, {
-        listItem: "Bourne premacy"
-      }), /*#__PURE__*/React.createElement(Movie, {
-        listItem: "Aquaman"
-      }), /*#__PURE__*/React.createElement(Movie, {
-        listItem: "Lord of the Rings"
-      })));
-    }
-  }]);
-  return MovieList;
-}(React.Component);
-var Movie = function Movie(props) {
-  // listItem =  "Star Wars"
-  return /*#__PURE__*/React.createElement("li", null, props.listItem);
-};
 var DOMContainer = document.getElementById('app');
 var root = ReactDOM.createRoot(DOMContainer);
-root.render( /*#__PURE__*/React.createElement(MovieList, {
-  subTitle: 'the best top films'
-}));
+root.render( /*#__PURE__*/React.createElement(Checkbox, null));
