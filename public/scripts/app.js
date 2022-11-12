@@ -28,6 +28,15 @@ var handleRemove = function handleRemove(e) {
 var DOMContainer = document.getElementById('app');
 var root = ReactDOM.createRoot(DOMContainer);
 var render = function render() {
+  var randomNum = Math.floor(Math.random() * app.options.length);
+  var option = app.options[randomNum];
+  console.log('randomNum:', randomNum);
+  var getRandomOption = function getRandomOption(e) {
+    console.log('app.options[option:', app.options[option]);
+    console.log('option:', option);
+    render();
+    alert(option);
+  };
   var template = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "The BLA"), app.subTitle && /*#__PURE__*/React.createElement("p", null, app.subTitle), /*#__PURE__*/React.createElement("p", null, app.options.length > 0 ? 'Here are your options : ' : 'There are no options!'), /*#__PURE__*/React.createElement("p", null, app.options.length), /*#__PURE__*/React.createElement("ol", null, app.options.map(function (option, index) {
     return /*#__PURE__*/React.createElement("li", {
       key: index
