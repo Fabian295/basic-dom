@@ -38,11 +38,11 @@ const render = () => {
   const randomNum = Math.floor(Math.random() * app.options.length)
   const option = app.options[randomNum]
   console.log('randomNum:', randomNum)
+
   const getRandomOption = (e) => {
     console.log('app.options[option:', app.options[option])
     console.log('option:', option)
     render()
-
     alert((option))
   }
 
@@ -52,20 +52,32 @@ const render = () => {
       { app.subTitle && <p>{ app.subTitle }</p> }
       <p>{ app.options.length > 0 ? 'Here are your options : ' : 'There are no options!' }</p>
       <p>{ app.options.length }</p>
-  
-      <ol>
-        { app.options.map((option, index) => {
-          return (
-            <li key={index}>{ option }</li>
-          )
-        }) }
-      </ol>
+
   
       <form action="" onSubmit={onFormSubmit}>
         <input type="text" name="option" id="" />
         <button >Add Option</button>
+          
+        <ol>
+          { app.options.map((option, index) => {
+            return (
+              <li key={index}>{ option }</li>
+            )
+          }) }
+        </ol>
       </form>
-        <button  onClick={handleRemove}>Remove Option</button>
+       
+        <p>
+        <button  
+        onClick={handleRemove}
+        disabled={ app.options.length === 0 }
+        >Remove Option</button>
+          <button
+          onClick={ getRandomOption }
+          >
+          Get Random Option
+          </button>
+        </p>
     </div>
   );
 
