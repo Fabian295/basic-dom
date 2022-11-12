@@ -130,8 +130,8 @@ root.render(<Checkbox  />)
    render()
  }
  
- const DOMContainer = document.getElementById('app')
- const root = ReactDOM.createRoot(DOMContainer)
+//  const DOMContainer = document.getElementById('app')
+//  const root = ReactDOM.createRoot(DOMContainer)
  
  const render = () => {
  
