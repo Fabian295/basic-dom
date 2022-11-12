@@ -52,11 +52,8 @@ const render = () => {
       <p>{ app.options.length }</p>
   
       <ol>
-        { app.options.map((option, index) => {
-          return (
-            <li key={index}>{ option }</li>
-          )
-        }) }
+        <li>{ app.options[0] }</li>
+        <li>{ app.options[1] }</li>
       </ol>
   
       <form action="" onSubmit={onFormSubmit}>
