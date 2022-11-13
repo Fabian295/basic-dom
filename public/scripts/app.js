@@ -95,7 +95,7 @@ var BLA = /*#__PURE__*/function (_React$Component) {
       var sub = 'Get all Activities you want in a list';
       var options = ['optionOne', 'optionTwo', 'optionThree'];
       return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Header, {
-        title: "title",
+        title: title,
         subtitle: sub
       }), /*#__PURE__*/React.createElement(Action, null), /*#__PURE__*/React.createElement(Options, {
         options: options
@@ -144,14 +144,19 @@ var Action = /*#__PURE__*/function (_React$Component3) {
 var Options = /*#__PURE__*/function (_React$Component4) {
   _inherits(Options, _React$Component4);
   var _super4 = _createSuper(Options);
-  function Options() {
+  function Options(props) {
+    var _this;
     _classCallCheck(this, Options);
-    return _super4.apply(this, arguments);
+    _this = _super4.call(this, props);
+    _this.handleRemoveAll = _this.handleRemoveAll.bind(_assertThisInitialized(_this));
+    return _this;
   }
   _createClass(Options, [{
     key: "handleRemoveAll",
     value: function handleRemoveAll() {
-      alert('Reemove qll');
+      console.log(this.props.options);
+      // alert('Reemove qll')
+      this.props.options = [];
     }
   }, {
     key: "render",
