@@ -191,27 +191,25 @@ var AddOption = /*#__PURE__*/function (_React$Component6) {
     return _super6.apply(this, arguments);
   }
   _createClass(AddOption, [{
-    key: "onFormSubmit",
-    value: function onFormSubmit(e) {
-      e.preventDefault();
-      console.log('on form submit');
-    }
-  }, {
     key: "addOption",
-    value: function addOption() {
-      alert('Add Option!');
+    value: function addOption(e) {
+      e.preventDefault();
+      var option = e.target.elements.option.value.trim();
+      if (option) {
+        alert(option);
+      }
     }
   }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("form", {
-        bame: "option",
-        onSubmit: this.onFormSubmit
+        name: "option",
+        onSubmit: this.addOption
       }, /*#__PURE__*/React.createElement("input", {
-        type: "text"
-      }), /*#__PURE__*/React.createElement("button", {
-        onClick: this.addOption
-      }, "Add Option")), /*#__PURE__*/React.createElement("p", null, "The AddOption Component"));
+        type: "text",
+        name: "option",
+        id: ""
+      }), /*#__PURE__*/React.createElement("button", null, "Add Option")), /*#__PURE__*/React.createElement("p", null, "The AddOption Component"));
     }
   }]);
   return AddOption;
