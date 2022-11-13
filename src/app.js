@@ -86,12 +86,37 @@
 
 // render();
 
+
+class BLA extends React.Component {
+  render() {
+
+    const title = 'The B.L. App';
+    const sub = 'Get all Activities you want in a list';
+    const options = ['optionOne', 'optionTwo', 'optionThree']
+
+    return (
+      <div>
+        <Header 
+        title='title'
+        subtitle={ sub }
+        />
+        <Action />
+        <Options 
+        options={ options }
+        />
+        <AddOption 
+        
+        />
+      </div>
+    )
+  }
+}
 class Header extends React.Component {
   render() {
     return (
       <div>
-        <h1>Titlee</h1>
-        <h2>Subtitle</h2>
+        <h1>{ this.props.title }</h1>
+        <h2>{ this.props.subtitle }</h2>
       </div>
     )
   }
@@ -110,9 +135,15 @@ class Action extends React.Component {
 class Options extends React.Component {
   render() {
     return (
-      <div>
-        <p>The Options Array Component</p>
-      </div>
+      <ol>
+        {
+          this.props.options.map((option, index) => {
+            return (
+              <Option key={index} optionText={ option } />
+            )
+          })
+        }
+      </ol>
     )
   }
 }
@@ -121,8 +152,22 @@ class Option extends React.Component {
   render() {
     return (
       <div>
-        <p>The Option Component</p>
+        <li>{ this.props.optionText }</li>
       </div>
     )
   }
 }
+
+class AddOption extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>The AddOption Component</p>
+      </div>
+    )
+  }
+}
+
+const DOMContainer = document.getElementById('app')
+const root = ReactDOM.createRoot(DOMContainer)
+root.render(<BLA />)
