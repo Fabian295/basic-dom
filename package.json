@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src/app.js --out-file public/scripts/app.js --watch",
-    "fun": "babel src/fun/toggle.js --out-file public/scripts/app.js  --watch"
+    "fun": "babel src/fun/toggle.js --out-file public/scripts/app.js  --watch",
+    "counter": "babel src/fun/Counter.js --out-file public/scripts/app.js  --watch"
   },
   "repository": {
     "type": "git",
