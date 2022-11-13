@@ -127,9 +127,16 @@ var Action = /*#__PURE__*/function (_React$Component3) {
     return _super3.apply(this, arguments);
   }
   _createClass(Action, [{
+    key: "handlePick",
+    value: function handlePick() {
+      alert('handle Pick item!');
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", null, "What should I do"));
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
+        onClick: this.handlePick
+      }, "What should I do"));
     }
   }]);
   return Action;
@@ -142,9 +149,16 @@ var Options = /*#__PURE__*/function (_React$Component4) {
     return _super4.apply(this, arguments);
   }
   _createClass(Options, [{
+    key: "handleRemoveAll",
+    value: function handleRemoveAll() {
+      alert('Reemove qll');
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("ol", null, this.props.options.map(function (option, index) {
+      return /*#__PURE__*/React.createElement("ol", null, /*#__PURE__*/React.createElement("button", {
+        onClick: this.handleRemoveAll
+      }, " Remove All "), this.props.options.map(function (option, index) {
         return /*#__PURE__*/React.createElement(Option, {
           key: index,
           optionText: option
@@ -177,9 +191,27 @@ var AddOption = /*#__PURE__*/function (_React$Component6) {
     return _super6.apply(this, arguments);
   }
   _createClass(AddOption, [{
+    key: "onFormSubmit",
+    value: function onFormSubmit(e) {
+      e.preventDefault();
+      console.log('on form submit');
+    }
+  }, {
+    key: "addOption",
+    value: function addOption() {
+      alert('Add Option!');
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "The AddOption Component"));
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("form", {
+        bame: "option",
+        onSubmit: this.onFormSubmit
+      }, /*#__PURE__*/React.createElement("input", {
+        type: "text"
+      }), /*#__PURE__*/React.createElement("button", {
+        onClick: this.addOption
+      }, "Add Option")), /*#__PURE__*/React.createElement("p", null, "The AddOption Component"));
     }
   }]);
   return AddOption;
